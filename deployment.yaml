@@ -14,6 +14,8 @@ spec:
       labels:
         app: nginx
     spec:
+      syncPolicy:
+        automated: {}
       containers:
       - name: nginx
         image: nginx:latest
