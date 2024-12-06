@@ -5,7 +5,9 @@ metadata:
   labels:
     app: nginx
 spec:
-  replicas: 1
+  syncPolicy:
+    automated: {}
+  replicas: 2
   selector:
     matchLabels:
       app: nginx
@@ -14,8 +16,6 @@ spec:
       labels:
         app: nginx
     spec:
-      syncPolicy:
-        automated: {}
       containers:
       - name: nginx
         image: nginx:latest
